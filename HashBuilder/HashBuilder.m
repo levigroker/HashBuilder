@@ -2,6 +2,7 @@
 //  HashBuilder.m
 //
 //  Created by Levi Brown on 12/14/12.
+//  See: http://www.mikeash.com/pyblog/friday-qa-2010-06-18-implementing-equality-and-hashing.html
 //  Copyright (c) 2012, 2013 Levi Brown <mailto:levigroker@gmail.com>
 //  This work is licensed under the Creative Commons Attribution 3.0
 //  Unported License. To view a copy of this license, visit

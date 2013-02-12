@@ -19,25 +19,51 @@
 
 #import <Foundation/Foundation.h>
 
-//Used to build a hash result from contributed objects or hashes (presumably properties
-//on your object which should be considered in the isEqual: override).
-//Create a HashBuilder object, contribute to it, then query the 'builtHash' property
-//for the resulting hash.
-//
-//NOTE: The order of contribution /will/ change the resulting hash, even if all the same values are contributed.
-//For example:
-//
-//    HashBuilder *builder1 = [HashBuilder builder];
-//    [builder1 contributeObject:@"a"];
-//    [builder1 contributeObject:[NSNumber numberWithInteger:12345]];
-//    NSUInteger hash1 = builder1.builtHash;
-//
-//    HashBuilder *builder2 = [HashBuilder builder];
-//    [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
-//    [builder2 contributeObject:@"a"];
-//    NSUInteger hash2 = builder2.builtHash;
-//
-//hash1 != hash2
+/**
+ HashBuilder
+ ===========
+ Used to build a hash result from contributed objects or hashes (presumably
+ properties on your object which should be considered in the isEqual: override).
+ The intention is for the hash result to be returned from an override to the
+ `NSObject` `- (NSUInteger)hash` method.
+ 
+ To use, create a HashBuilder object, contribute to it, then query the 'builtHash'
+ property for the resulting hash.
+ 
+    - (NSUInteger)hash
+    {
+        HashBuilder *builder = [HashBuilder builder];
+
+        [builder contributeObject:self.objectID];
+        [builder contributeObject:self.occurredDate];
+        [builder contributeObject:self.type];
+        [builder contributeObject:self.objectURL];
+        [builder contributeObject:self.tags];
+        [builder contributeObject:self.count];
+
+        NSUInteger retVal = builder.builtHash;
+
+        return retVal;
+    }
+ 
+ It is prudent to consider the same properties when overriding your `- (BOOL)isEqual:(id)object`
+ method as well.
+ 
+ @warning *NOTE:* The order of contribution _will_ change the resulting hash, even if all
+ the same values are contributed. For example:
+ 
+    HashBuilder *builder1 = [HashBuilder builder];
+    [builder1 contributeObject:@"a"];
+    [builder1 contributeObject:[NSNumber numberWithInteger:12345]];
+    NSUInteger hash1 = builder1.builtHash;
+
+    HashBuilder *builder2 = [HashBuilder builder];
+    [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
+    [builder2 contributeObject:@"a"];
+    NSUInteger hash2 = builder2.builtHash;
+ 
+ `hash1 != hash2`
+ */
 
 @interface HashBuilder : NSObject
 
