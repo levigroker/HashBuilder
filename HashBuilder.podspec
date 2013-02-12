@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/levigroker/HashBuilder.git", :tag => "1.0" }
   s.platform     = :ios, '5.0'
   s.ios.deployment_target = '5.0'
-  s.source_files = 'HashBuilder/HashBuilder/*.{h,m}'
+  s.source_files = 'HashBuilder/**/*.{h,m}'
   s.frameworks = 'Foundation'
   s.requires_arc = true
 end
