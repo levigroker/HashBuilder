@@ -59,7 +59,7 @@ the same values are contributed. For example:
 
 #### About
 A professional iOS engineer by day, my name is Levi Brown. Authoring a technical
-blog [grokgin.gs](http://grokgin.gs), I am reachable via twitter
+blog [grokin.gs](http://grokin.gs), I am reachable via twitter
 [@levigoker](https://twitter.com/levigroker) and email
 [levigroker@gmail.com](mailto:levigroker@gmail.com). Your constructive comments
 and feedback are always welcome.
