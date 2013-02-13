@@ -9,7 +9,7 @@ The intention is for the hash result to be returned from an override to the
 
 If you're using [CocoPods](http://cocopods.org) it's as simple as adding this to your `Podfile`:
 
-	pod 'HashBuilder', :git => 'https://github.com/levigroker/HashBuilder.git'
+	pod 'HashBuilder', '~> 1.0'
 
 ### Documentation
 
