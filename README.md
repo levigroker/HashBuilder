@@ -58,12 +58,12 @@ the same values are contributed. For example:
   Please see the included LICENSE.txt for complete details.
 
 #### About
-#### About
+
 A professional iOS engineer by day, my name is Levi Brown. Authoring a technical
 blog [grokin.gs](http://grokin.gs), I am reachable via:
 
-Twitter [@levigroker](https://twitter.com/levigroker)
-App.net [@levigroker](https://alpha.app.net/levigroker)
-EMail [levigroker@gmail.com](mailto:levigroker@gmail.com).
+Twitter [@levigroker](https://twitter.com/levigroker)  
+App.net [@levigroker](https://alpha.app.net/levigroker)  
+EMail [levigroker@gmail.com](mailto:levigroker@gmail.com)  
 
 Your constructive comments and feedback are always welcome.
