@@ -1,5 +1,10 @@
 HashBuilder
 ===========
+[![Build Status](https://travis-ci.org/levigroker/HashBuilder.svg)](https://travis-ci.org/levigroker/HashBuilder)
+[![Version](http://img.shields.io/cocoapods/v/HashBuilder.svg)](http://cocoapods.org/?q=HashBuilder)
+[![Platform](http://img.shields.io/cocoapods/p/HashBuilder.svg)]()
+[![License](http://img.shields.io/cocoapods/l/HashBuilder.svg)](https://github.com/levigroker/HashBuilder/blob/master/LICENSE.txt)
+
 Used to build a hash result from contributed objects or hashes (presumably
 properties on your object which should be considered in the isEqual: override).
 The intention is for the hash result to be returned from an override to the
@@ -10,6 +15,9 @@ The intention is for the hash result to be returned from an override to the
 If you're using [CocoPods](http://cocopods.org) it's as simple as adding this to your `Podfile`:
 
 	pod 'HashBuilder', '~> 1.0'
+
+otherwise, simply add the contents of the `HashBuilder` subdirectory to your
+project.
 
 ### Documentation
 
@@ -63,7 +71,6 @@ A professional iOS engineer by day, my name is Levi Brown. Authoring a technical
 blog [grokin.gs](http://grokin.gs), I am reachable via:
 
 Twitter [@levigroker](https://twitter.com/levigroker)  
-App.net [@levigroker](https://alpha.app.net/levigroker)  
 EMail [levigroker@gmail.com](mailto:levigroker@gmail.com)  
 
 Your constructive comments and feedback are always welcome.

@@ -1,0 +1,10 @@
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+
+language: objective-c
+install:
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+script:
+- set -o pipefail && xcodebuild test -project HashBuilderLib/HashBuilderLib.xcodeproj -scheme HashBuilderLib -sdk macosx ONLY_ACTIVE_ARCH=NO | xcpretty -c
+- pod lib lint --quick

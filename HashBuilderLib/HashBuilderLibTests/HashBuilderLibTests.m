@@ -1,27 +1,28 @@
 //
-//  HashBuilderTests.m
-//  HashBuilderTests
+//  HashBuilderLibTests.m
+//  HashBuilderLibTests
 //
-//  Created by Levi Brown on 2/12/13.
-//  Copyright (c) 2013 Levi Brown. All rights reserved.
+//  Created by Levi Brown on 10/4/15.
+//  Copyright (c) 2015 Levi Brown. All rights reserved.
 //
 
-#import "HashBuilderTests.h"
+#import <Cocoa/Cocoa.h>
+#import <XCTest/XCTest.h>
 #import "HashBuilder.h"
 
-@implementation HashBuilderTests
+@interface HashBuilderLibTests : XCTestCase
 
-- (void)setUp
-{
+@end
+
+@implementation HashBuilderLibTests
+
+- (void)setUp {
     [super setUp];
-    
-    // Set-up code here.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-- (void)tearDown
-{
-    // Tear-down code here.
-    
+- (void)tearDown {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
@@ -35,7 +36,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test110
@@ -48,7 +49,7 @@
     [builder2 contributeObject:@"a"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test120
@@ -61,7 +62,7 @@
     [builder2 contributeObject:@"b"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test130
@@ -74,7 +75,7 @@
     [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test140
@@ -87,7 +88,7 @@
     [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test150
@@ -102,7 +103,7 @@
     [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test160
@@ -117,7 +118,7 @@
     [builder2 contributeObject:@"a"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test170
@@ -132,7 +133,7 @@
     [builder2 contributeObject:@"b"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test180
@@ -147,7 +148,7 @@
     [builder2 contributeObject:@"b"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test190
@@ -164,7 +165,7 @@
     [builder2 contributeObject:@"b"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test200
@@ -181,7 +182,7 @@
     [builder2 contributeObject:@"b"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test210
@@ -198,7 +199,7 @@
     [builder2 contributeObject:[NSNumber numberWithInteger:12345]];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test220
@@ -211,7 +212,7 @@
     [builder2 contributeObject:@"a"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test230
@@ -225,7 +226,7 @@
     [builder2 contributeObject:@"a"];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test240
@@ -239,7 +240,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test250
@@ -254,7 +255,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test260
@@ -267,7 +268,7 @@
     [builder2 contributeBOOL:YES];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test270
@@ -280,7 +281,7 @@
     [builder2 contributeBOOL:NO];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test280
@@ -295,7 +296,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test290
@@ -310,7 +311,7 @@
     [builder2 contributeBOOL:YES];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test300
@@ -323,7 +324,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test310
@@ -336,7 +337,7 @@
     [builder2 contributeObject:nil];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test320
@@ -357,7 +358,7 @@
     [builder2 contributeBOOL:NO];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test330
@@ -378,7 +379,7 @@
     [builder2 contributeBOOL:YES];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertEquals(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
+    XCTAssertEqual(hash1, hash2, @"Hash '%lx' is unexpectedly not equal to '%lx'", hash1, hash2);
 }
 
 - (void)test340
@@ -399,7 +400,7 @@
     [builder2 contributeBOOL:NO];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 - (void)test350
@@ -420,7 +421,7 @@
     [builder2 contributeBOOL:YES];
     NSUInteger hash2 = builder2.builtHash;
     
-    STAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
+    XCTAssertTrue(hash1 != hash2, @"Hash '%lx' is unexpectedly equal to '%lx'", hash1, hash2);
 }
 
 @end
